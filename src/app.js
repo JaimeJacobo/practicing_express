@@ -65,10 +65,18 @@ app.get('/weather', (req, res)=>{
   })
 })
 
+app.get('/help/*', (req, res)=>{
+  res.render('error404_help', {
+    title: 'Help page not found',
+    name: 'Jaime Jacobo'
+  })
+})
+
 //NON EXISTENT PAGE
 app.get('*', (req, res)=>{
   res.render('error404', {
-
+    title: 'Not found page',
+    name: 'Jaime Jacobo'
   })
 })
 
